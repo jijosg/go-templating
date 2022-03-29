@@ -34,22 +34,13 @@ type Count struct {
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "template",
-	Short: "A brief description of your application",
-	Long: `A longer description that spans multiple lines and likely contains
-examples and usage of using your application. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
-	// Uncomment the following line if your bare application
-	// has an action associated with it:
-	// Reads a go template and executes it
+	Use:   "go-templating",
+	Short: "Go templating example using basic template",
+	Long:  `Go templating example using basic template.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("template called")
 		// Reads a go template and executes it
-		dat, err := ioutil.ReadFile(viper.GetString("values"))
-		fmt.Printf("%s",dat)
+		dat, err := ioutil.ReadFile(valuesFile)
 		if err != nil {
 			fmt.Errorf("Error reading values file: %v", err)
 		}
@@ -87,10 +78,8 @@ func init() {
 	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.template.yaml)")
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
-	rootCmd.Flags().StringP("values", "f", "resources/values.yaml", "Values file Path")
+	rootCmd.Flags().StringVarP(&valuesFile, "values", "f", "resources/values.yaml", "Values file Path")
 	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
-	viper.BindPFlag("values", rootCmd.PersistentFlags().Lookup("values"))
-	// template.Must takes the reponse of template.ParseFiles and does error checking
 	temp = template.Must(template.ParseFiles("resources/example.gotmpl"))
 }
 

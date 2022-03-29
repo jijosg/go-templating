@@ -15,7 +15,7 @@ limitations under the License.
 */
 package main
 
-import "github.com/jijosg/gotemp/cmd"
+import "github.com/jijosg/go-templating/cmd"
 
 func main() {
 	cmd.Execute()

@@ -1,4 +1,4 @@
-# go-template
+# go-templating
 
 This project is to demonstrate the use of go templating engine using files.
 

@@ -1,4 +1,4 @@
-module github.com/jijosg/gotemp
+module github.com/jijosg/go-templating
 
 go 1.17
 
