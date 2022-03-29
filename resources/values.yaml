@@ -1,0 +1,5 @@
+docker:
+  registry: "docker.io"
+image: 
+  name: "nginx"
+  tag: "1.0.0"
