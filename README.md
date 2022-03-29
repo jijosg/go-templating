@@ -13,7 +13,7 @@ Flags:
       --config string   config file (default is $HOME/.template.yaml)
   -h, --help            help for template
   -t, --toggle          Help message for toggle
-  -f, --values string   Values file Path (default "../resources/values.yaml")
+  -f, --values string   Values file Path (default "resources/values.yaml")
   ```
 
 Custom values file can be passed using the -f flag.
