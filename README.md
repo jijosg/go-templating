@@ -24,5 +24,10 @@ Custom values file can be passed using the -f flag.
 template called
 docker1: docker.io
 image: nginx1.0.0
+
+> go run main.go -f test.yaml
+template called
+docker1: docker.io
+image: alpine1.14.0
 ```
                                     
