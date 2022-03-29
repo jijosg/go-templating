@@ -19,6 +19,14 @@ Flags:
 Custom values file can be passed using the -f flag.
 
 ## Example
+
+### Template 
+```bash
+docker1: {{ .docker.registry }}
+image: {{ .image.name }}{{ .image.tag }}
+```
+
+### Valuess
 ```bash
 > go run main.go
 template called
